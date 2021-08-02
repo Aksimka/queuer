@@ -18,8 +18,6 @@ export default function Home() {
   )
 }
 
-
-// eslint-disable-next-line react/display-name
 Home.withLayout = (page: ReactElement) => {
     return (
         <MenuLayout>
