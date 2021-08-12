@@ -10,6 +10,7 @@
 .MenuTitle {
   font-size: 32px;
   height: 50px;
+  line-height: 32px;
 }
 
 .MenuList {
@@ -19,6 +20,11 @@
 .MenuItem {
   width: 100%;
   padding: 24px 32px;
+  cursor: pointer;
+  transition: .1s;
+  &:hover {
+    background: #e1e1e1;
+  }
 }
 
 .Slot {
