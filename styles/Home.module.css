@@ -2,6 +2,15 @@
 
 }
 
+.Cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 12px;
+}
+
+.Card {
+}
+
 .title a {
   color: #0070f3;
   text-decoration: none;

@@ -1,12 +1,52 @@
 .Card {
-  border-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 0.2);
+  overflow: hidden;
+}
+
+.Card:hover .HeaderImage {
+  filter: blur(2px);
+}
+.Card:hover .HeaderLayout {
+  opacity: .75;
+
 }
 
 .Header {
+  height: 200px;
+  position: relative;
+  transition: .2s;
+}
+
+.HeaderLayout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #222222;
+  opacity: .3;
+  transition: .2s;
+}
+
+.HeaderImage {
+
+}
+
+
+.HeaderContent {
+  position: relative;
+}
+
+.Stickers {
+  display: flex;
+}
+
+.Sticker {
 
 }
 
 .Content {
-
+  height: 200px;
 }
