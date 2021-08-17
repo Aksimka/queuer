@@ -1,10 +1,15 @@
 .Wrapper {
   display: flex;
+  height: 100vh;
 }
 
 .Menu {
+  width: 300px;
   flex: 0 0 300px;
   border-right: 1px solid #eaeaea;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  transition: .5s;
 }
 
 .MenuTitle {
@@ -29,4 +34,20 @@
 
 .Slot {
   flex: 1;
+  overflow: scroll;
+  margin-left: 12px;
+}
+
+@media screen and (max-width: 1080px) {
+  .Menu {
+    width: 200px;
+    flex-basis: 200px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Menu {
+    width: 0;
+    flex-basis: 0;
+  }
 }

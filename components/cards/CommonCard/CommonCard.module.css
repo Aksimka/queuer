@@ -3,6 +3,7 @@
   border-top-right-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 0.2);
   overflow: hidden;
+  cursor: pointer;
 }
 
 .Card:hover .HeaderImage {
@@ -37,6 +38,18 @@
 
 .HeaderContent {
   position: relative;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.HeaderInfo {
+
 }
 
 .Stickers {
@@ -49,4 +62,5 @@
 
 .Content {
   height: 200px;
+  background-color: #FFFFFF;
 }

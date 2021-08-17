@@ -21,3 +21,8 @@ a {
   align-items: center;
   justify-content: center;
 }
+
+.align-center {
+  display: flex;
+  align-items: center;
+}

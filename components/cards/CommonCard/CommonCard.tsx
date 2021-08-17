@@ -2,6 +2,7 @@ import styles from './CommonCard.module.css'
 import EmojiSticker from "../../EmojiSticker/EmojiSticker"
 import Image from 'next/image'
 import PS5Image from '@/public/img/ps5.png'
+import PeopleIcon from "../../icons/People";
 
 export default function CommonCard() {
   return (
@@ -22,6 +23,12 @@ export default function CommonCard() {
                 <span>👕</span>
               </EmojiSticker>
             </div>
+          </div>
+          <div className={styles.HeaderInfo}>
+            <span className="align-center">
+              <PeopleIcon color={'#ffffff'} fill={'#ffffff'} />
+              <span style={{marginLeft: '8px'}}>0</span>
+            </span>
           </div>
         </div>
       </div>

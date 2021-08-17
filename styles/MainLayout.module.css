@@ -1,9 +1,7 @@
 .Container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
 }
 
 .Heading {
