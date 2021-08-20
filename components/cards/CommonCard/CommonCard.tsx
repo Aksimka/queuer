@@ -1,10 +1,12 @@
 import styles from './CommonCard.module.css'
-import EmojiSticker from "../../EmojiSticker/EmojiSticker"
+import EmojiSticker from '../../EmojiSticker/EmojiSticker'
 import Image from 'next/image'
 import PS5Image from '@/public/img/ps5.png'
-import PeopleIcon from "../../icons/People";
 
-export default function CommonCard() {
+import PeopleIcon from '../../icons/People'
+import { ReactElement } from 'react'
+
+export default function CommonCard(): ReactElement {
   return (
     <div className={styles.Card}>
       <div className={styles.Header}>
@@ -15,7 +17,7 @@ export default function CommonCard() {
           objectFit="cover"
           className={styles.HeaderImage}
         />
-        <div className={styles.HeaderLayout}/>
+        <div className={styles.HeaderLayout} />
         <div className={styles.HeaderContent}>
           <div className={styles.Stickers}>
             <div className={styles.Sticker}>
@@ -27,14 +29,12 @@ export default function CommonCard() {
           <div className={styles.HeaderInfo}>
             <span className="align-center">
               <PeopleIcon color={'#ffffff'} fill={'#ffffff'} />
-              <span style={{marginLeft: '8px'}}>0</span>
+              <span style={{ marginLeft: '8px' }}>0</span>
             </span>
           </div>
         </div>
       </div>
-      <div className={styles.Content}>
-        card content
-      </div>
+      <div className={styles.Content}>card content</div>
     </div>
   )
 }
