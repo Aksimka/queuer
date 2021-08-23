@@ -24,11 +24,15 @@
 
 .MenuItem {
   width: 100%;
-  padding: 24px 32px;
   cursor: pointer;
   transition: .1s;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
   &:hover {
-    background: #e1e1e1;
+    background: #f0f0f0;
+    font-size: 18px;
   }
 }
 

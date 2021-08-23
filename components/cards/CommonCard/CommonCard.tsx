@@ -5,6 +5,7 @@ import PS5Image from '@/public/img/ps5.png'
 
 import PeopleIcon from '../../icons/People'
 import { ReactElement } from 'react'
+import classNames from 'classnames'
 
 export default function CommonCard(): ReactElement {
   return (
@@ -25,16 +26,46 @@ export default function CommonCard(): ReactElement {
                 <span>👕</span>
               </EmojiSticker>
             </div>
-          </div>
-          <div className={styles.HeaderInfo}>
-            <span className="align-center">
-              <PeopleIcon color={'#ffffff'} fill={'#ffffff'} />
-              <span style={{ marginLeft: '8px' }}>0</span>
-            </span>
+            <div className={styles.Sticker}>
+              <EmojiSticker>
+                <span>👕</span>
+              </EmojiSticker>
+            </div>
+            <div className={styles.Sticker}>
+              <EmojiSticker>
+                <span>👕</span>
+              </EmojiSticker>
+            </div>
+            <div className={styles.Sticker}>
+              <EmojiSticker>
+                <span>👕</span>
+              </EmojiSticker>
+            </div>
           </div>
         </div>
       </div>
-      <div className={styles.Content}>card content</div>
+      <div className={styles.Content}>
+        <div className={styles.ContentMain}>
+          <div className={styles.ContentTitle}>Sony Playstation 5</div>
+          <div className={styles.ContentShortDescription}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis
+            delectus expedita illo laudantium magni minus neque nisi placeat
+            quasi sed, voluptatem voluptatibus voluptatum. Accusantium ad
+            aperiam architecto blanditiis deleniti dolor doloribus eligendi et
+            ipsam, iusto maxime, minima nemo odit, placeat quaerat quam
+            quibusdam quod repellendus soluta ullam unde voluptates
+            voluptatibus!
+          </div>
+        </div>
+        <div className={styles.ContentFooter}>
+          <div
+            className={classNames([styles.ContentFooterTags, 'align-center'])}
+          >
+            <PeopleIcon size={24} />
+            <span>0</span>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

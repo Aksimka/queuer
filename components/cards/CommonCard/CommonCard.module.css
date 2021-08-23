@@ -4,6 +4,11 @@
   box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 0.2);
   overflow: hidden;
   cursor: pointer;
+  transition: .2s;
+}
+
+.Card:hover {
+  box-shadow: 0 6px 16px 0 rgba(34, 60, 80, 0.2);
 }
 
 .Card:hover .HeaderImage {
@@ -11,7 +16,9 @@
 }
 .Card:hover .HeaderLayout {
   opacity: .75;
-
+}
+.Card:hover .ContentFooterTags {
+  color: #000000;
 }
 
 .Header {
@@ -49,18 +56,61 @@
 }
 
 .HeaderInfo {
-
+  color: #ffffff;
+  transition: .2s;
 }
 
 .Stickers {
   display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.Stickers:hover .Sticker:not(:last-child) {
+  margin-left: 4px;
 }
 
 .Sticker {
+  transition: .2s;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 1);
+}
 
+.Sticker:not(:last-child) {
+  margin-left: -16px;
 }
 
 .Content {
   height: 200px;
   background-color: #FFFFFF;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ContentMain {
+
+}
+
+.ContentTitle {
+  font-size: 24px;
+}
+.ContentShortDescription {
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 8px;
+  -webkit-line-clamp: 5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ContentFooter {
+
+}
+
+.ContentFooterTags {
+  color: #bababa;
+  transition: .2s;
 }

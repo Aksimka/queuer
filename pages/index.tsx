@@ -1,13 +1,49 @@
 import styles from '../styles/Home.module.css'
-import MenuLayout from "../layouts/menu";
-import {ReactElement} from "react";
-import MainLayout from "../layouts/main";
-import CommonCard from "../components/cards/CommonCard/CommonCard";
+import MenuLayout from '../layouts/menu'
+import { ReactElement } from 'react'
+import MainLayout from '../layouts/main'
+import CommonCard from '../components/cards/CommonCard/CommonCard'
 
-export default function Home() {
+export default function Home(): ReactElement {
   return (
     <div className={styles.Main}>
       <div className={styles.Cards}>
+        <div className={styles.Card}>
+          <CommonCard />
+        </div>
+        <div className={styles.Card}>
+          <CommonCard />
+        </div>
+        <div className={styles.Card}>
+          <CommonCard />
+        </div>
+        <div className={styles.Card}>
+          <CommonCard />
+        </div>
+        <div className={styles.Card}>
+          <CommonCard />
+        </div>
+        <div className={styles.Card}>
+          <CommonCard />
+        </div>
+        <div className={styles.Card}>
+          <CommonCard />
+        </div>
+        <div className={styles.Card}>
+          <CommonCard />
+        </div>
+        <div className={styles.Card}>
+          <CommonCard />
+        </div>
+        <div className={styles.Card}>
+          <CommonCard />
+        </div>
+        <div className={styles.Card}>
+          <CommonCard />
+        </div>
+        <div className={styles.Card}>
+          <CommonCard />
+        </div>
         <div className={styles.Card}>
           <CommonCard />
         </div>
@@ -34,4 +70,3 @@ Home.withLayout = (page: ReactElement) => {
     </MenuLayout>
   )
 }
-
