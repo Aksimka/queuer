@@ -17,7 +17,7 @@ export default function MenuLayout(props: PropTypes): ReactElement {
           .queuer
         </h2>
         <ul className={styles.MenuList}>
-          <UiLink href="/">
+          <UiLink href="/queues">
             <div className={styles.MenuItem}>Все очереди</div>
           </UiLink>
           <UiLink href="/shops">

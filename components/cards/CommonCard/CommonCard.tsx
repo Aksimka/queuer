@@ -4,12 +4,18 @@ import Image from 'next/image'
 import PS5Image from '@/public/img/ps5.png'
 
 import PeopleIcon from '../../icons/People'
-import { ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 import classNames from 'classnames'
 
-export default function CommonCard(): ReactElement {
+interface PropTypes {
+  onClick?: (e: React.MouseEvent) => void
+}
+
+export default function CommonCard(props: PropTypes): ReactElement {
+  const { onClick = () => undefined } = props
+
   return (
-    <div className={styles.Card}>
+    <div className={styles.Card} onClick={onClick}>
       <div className={styles.Header}>
         <Image
           src={PS5Image}

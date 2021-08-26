@@ -1,72 +1,17 @@
 import styles from '../styles/Home.module.css'
-import MenuLayout from '../layouts/menu'
-import { ReactElement } from 'react'
-import MainLayout from '../layouts/main'
-import CommonCard from '../components/cards/CommonCard/CommonCard'
+import { ReactElement, useEffect } from 'react'
+import { useRouter } from 'next/router'
+import MenuLayout from '@/layouts/menu'
+import MainLayout from '@/layouts/main'
 
-export default function Home(): ReactElement {
-  return (
-    <div className={styles.Main}>
-      <div className={styles.Cards}>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-        <div className={styles.Card}>
-          <CommonCard />
-        </div>
-      </div>
-    </div>
-  )
+export default function Index(): ReactElement {
+  const router = useRouter()
+  useEffect(() => {
+    router.push('/queues')
+  })
+  return <></>
 }
 
-Home.withLayout = (page: ReactElement) => {
-  return (
-    <MenuLayout>
-      <MainLayout heading="Все очереди" footer="footer">
-        {page}
-      </MainLayout>
-    </MenuLayout>
-  )
+Index.withLayout = (page: ReactElement) => {
+  return <MenuLayout>{page}</MenuLayout>
 }
