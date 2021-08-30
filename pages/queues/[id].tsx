@@ -5,7 +5,7 @@ import MainLayout from '@/layouts/main'
 
 export default function Queue(): ReactElement {
   const router = useRouter()
-  console.log(router, 'routerr')
+  console.log(router, 'router')
   const { id } = router.query
   return (
     <MenuLayout>
