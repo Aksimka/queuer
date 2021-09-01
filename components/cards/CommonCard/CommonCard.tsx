@@ -4,18 +4,18 @@ import Image from 'next/image'
 import PS5Image from '@/public/img/ps5.png'
 
 import PeopleIcon from '../../icons/People'
-import React, { ReactElement } from 'react'
+import React, { forwardRef } from 'react'
 import classNames from 'classnames'
 
 interface PropTypes {
   onClick?: (e: React.MouseEvent) => void
 }
 
-export default function CommonCard(props: PropTypes): ReactElement {
+const CommonCard = forwardRef<HTMLDivElement, PropTypes>((props, ref) => {
   const { onClick = () => undefined } = props
 
   return (
-    <div className={styles.Card} onClick={onClick}>
+    <div className={styles.Card} onClick={onClick} ref={ref}>
       <div className={styles.Header}>
         <Image
           src={PS5Image}
@@ -74,4 +74,6 @@ export default function CommonCard(props: PropTypes): ReactElement {
       </div>
     </div>
   )
-}
+})
+
+export default CommonCard

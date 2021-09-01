@@ -5,7 +5,7 @@ import MainLayout from 'layouts/main'
 import CommonCard from 'components/cards/CommonCard/CommonCard'
 import UiLink from 'components/typography/UiLink'
 
-export default function Home(): ReactElement {
+export default function Queues(): ReactElement {
   return (
     <div className={styles.Main}>
       <div className={styles.Cards}>
@@ -61,7 +61,7 @@ export default function Home(): ReactElement {
   )
 }
 
-Home.withLayout = (page: ReactElement) => {
+Queues.withLayout = (page: ReactElement) => {
   return (
     <MenuLayout>
       <MainLayout heading="Все очереди" footer="footer">
