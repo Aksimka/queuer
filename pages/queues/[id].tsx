@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import MenuLayout from '@/layouts/menu'
 import styles from '@/styles/QueuePage.module.css'
 import classNames from 'classnames'
-import PS5Image from '@/public/img/ps5.png'
+import PS5Image from '@/public/images/ps5.png'
 import Image from 'next/image'
 
 export default function Queue(): ReactElement {

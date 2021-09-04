@@ -12,7 +12,17 @@
     "react/prop-types": "off",
     "react/display-name": ["off"],
     "eol-last": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "import/no-anonymous-default-export": ["error", {
+      "allowArray": true,
+      "allowArrowFunction": false,
+      "allowAnonymousClass": false,
+      "allowAnonymousFunction": true,
+      "allowCallExpression": true,
+      "allowLiteral": true,
+      "allowObject": true
+    }],
+    "no-var-requires": "off"
   },
   "settings": {
     "react": {
