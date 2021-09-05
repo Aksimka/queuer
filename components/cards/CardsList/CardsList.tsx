@@ -1,17 +1,23 @@
 import React, { ReactElement } from 'react'
 import styles from './CardsList.module.css'
+import classNames from 'classnames'
 
 interface PropTypes {
-  children: ReactElement
-  cols: number
+  children: JSX.Element | JSX.Element[]
+  cardWidth: number
 }
 
 export default function CardsList(props: PropTypes): ReactElement {
-  const { children } = props
+  const { children, cardWidth } = props
+
+  const dynamicColStyles = {
+    gridTemplateColumns: `repeat(auto-fit, minmax(${cardWidth}px, 1fr))`,
+  }
+
   const childsArray = React.Children.toArray(children)
-  console.log(childsArray)
+
   return (
-    <div className={styles.List}>
+    <div className={classNames([styles.List])} style={dynamicColStyles}>
       {childsArray.map((item, index) => {
         return (
           <div className={styles.Item} key={index}>
