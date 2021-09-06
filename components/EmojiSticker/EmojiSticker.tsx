@@ -1,15 +1,14 @@
 import styles from './EmojiSticker.module.css'
-import {ReactElement} from "react";
+import { ReactElement, FC } from 'react'
 
 interface PropTypes {
   children: ReactElement
 }
 
-export default function EmojiSticker(props: PropTypes) {
-
+const EmojiSticker: FC<PropTypes> = (props) => {
   const { children } = props
 
-  return (
-    <div className={styles.Sticker}>{children}</div>
-  )
+  return <div className={styles.Sticker}>{children}</div>
 }
+
+export default EmojiSticker

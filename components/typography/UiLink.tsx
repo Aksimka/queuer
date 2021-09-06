@@ -1,4 +1,4 @@
-import { ReactElement } from 'react'
+import { FC, ReactElement } from 'react'
 import Link from 'next/link'
 
 interface PropTypes {
@@ -6,7 +6,7 @@ interface PropTypes {
   href?: string
 }
 
-export default function UiLink(props: PropTypes): ReactElement {
+const UiLink: FC<PropTypes> = (props): ReactElement => {
   const { children, href = '/' } = props
   return (
     <Link href={href} passHref={true}>
@@ -14,3 +14,5 @@ export default function UiLink(props: PropTypes): ReactElement {
     </Link>
   )
 }
+
+export default UiLink

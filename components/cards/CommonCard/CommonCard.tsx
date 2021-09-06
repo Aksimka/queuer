@@ -3,7 +3,14 @@ import EmojiSticker from '../../EmojiSticker/EmojiSticker'
 import Image from 'next/image'
 
 import PeopleIcon from '../../icons/People'
-import React, { forwardRef, useEffect, useState } from 'react'
+import React, {
+  forwardRef,
+  ForwardRefExoticComponent,
+  ReactElement,
+  RefAttributes,
+  useEffect,
+  useState,
+} from 'react'
 import classNames from 'classnames'
 import QueueBadge from '@/types/queues'
 
@@ -17,7 +24,9 @@ interface PropTypes {
   badges: QueueBadge[]
 }
 
-const CommonCard = forwardRef<HTMLDivElement, PropTypes>((props, ref) => {
+const CommonCard: ForwardRefExoticComponent<
+  PropTypes & RefAttributes<HTMLDivElement>
+> = forwardRef<HTMLDivElement, PropTypes>((props, ref): ReactElement => {
   const {
     onClick = () => undefined,
     name,

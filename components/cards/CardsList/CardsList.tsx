@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { FC, ReactElement } from 'react'
 import styles from './CardsList.module.css'
 import classNames from 'classnames'
 
@@ -7,7 +7,7 @@ interface PropTypes {
   cardWidth: number
 }
 
-export default function CardsList(props: PropTypes): ReactElement {
+const CardsList: FC<PropTypes> = (props): ReactElement => {
   const { children, cardWidth } = props
 
   const dynamicColStyles = {
@@ -28,3 +28,5 @@ export default function CardsList(props: PropTypes): ReactElement {
     </div>
   )
 }
+
+export default CardsList

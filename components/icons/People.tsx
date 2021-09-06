@@ -1,7 +1,7 @@
-import { IconProps } from '../../types/Icon'
-import { ReactElement } from 'react'
+import { IconProps } from '@/types/Icon'
+import { FC, ReactElement } from 'react'
 
-export default function PeopleIcon(props: IconProps): ReactElement {
+const PeopleIcon: FC<IconProps> = (props): ReactElement => {
   const {
     size = 32,
     weight = 2,
@@ -34,3 +34,5 @@ export default function PeopleIcon(props: IconProps): ReactElement {
     </svg>
   )
 }
+
+export default PeopleIcon
