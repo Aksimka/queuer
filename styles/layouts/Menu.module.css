@@ -30,10 +30,12 @@
   display: flex;
   align-items: center;
   padding-left: 32px;
-  &:hover {
-    background: #f0f0f0;
-    font-size: 18px;
-  }
+  font-size: 18px;
+  font-weight: 500;
+}
+.MenuItem:hover {
+  background: #f0f0f0;
+  font-size: 20px;
 }
 
 .Slot {

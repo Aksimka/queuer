@@ -1,4 +1,4 @@
-import styles from '@/styles/menu.module.scss'
+import styles from '@/styles/layouts/Menu.module.css'
 import { ReactElement } from 'react'
 import classNames from 'classnames'
 import UiLink from '../components/typography/UiLink'

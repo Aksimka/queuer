@@ -1,4 +1,4 @@
-import styles from '../styles/MainLayout.module.css'
+import styles from '@/styles/layouts/MainLayout.module.css'
 import { ReactElement } from 'react'
 
 interface PropTypes {

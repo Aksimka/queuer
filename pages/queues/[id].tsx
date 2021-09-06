@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import { useRouter } from 'next/router'
 import MenuLayout from '@/layouts/menu'
-import styles from '@/styles/QueuePage.module.css'
+import styles from '@/styles/pages/QueuePage.module.css'
 import classNames from 'classnames'
 import PS5Image from '@/public/images/ps5.png'
 import Image from 'next/image'
