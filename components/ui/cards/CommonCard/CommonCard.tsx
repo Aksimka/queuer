@@ -1,8 +1,8 @@
-import styles from './CommonCard.module.css'
+import classes from './CommonCard.module.css'
 import EmojiSticker from '../../EmojiSticker/EmojiSticker'
 import Image from 'next/image'
 
-import PeopleIcon from '../../icons/People'
+import PeopleIcon from '../../../icons/People'
 import React, {
   forwardRef,
   ForwardRefExoticComponent,
@@ -44,24 +44,28 @@ const CommonCard: ForwardRefExoticComponent<
   }, [imagePath])
 
   return (
-    <div className={styles.Card} onClick={onClick} ref={ref}>
-      <div className={styles.Header}>
+    <div
+      className={classNames([classes.Card, 'standard-shadow'])}
+      onClick={onClick}
+      ref={ref}
+    >
+      <div className={classes.Header}>
         <Image
           src={localImagePath}
           alt="Изображение товара очереди"
           layout="fill"
           objectFit="cover"
-          className={styles.HeaderImage}
+          className={classes.HeaderImage}
           onError={() => {
             setImagePath(defaultImageSrc)
           }}
         />
-        <div className={styles.HeaderLayout} />
-        <div className={styles.HeaderContent}>
-          <div className={styles.Stickers}>
+        <div className={classes.HeaderLayout} />
+        <div className={classes.HeaderContent}>
+          <div className={classes.Stickers}>
             {badges.map((badge, index) => {
               return (
-                <div className={styles.Sticker} key={index}>
+                <div className={classes.Sticker} key={index}>
                   <EmojiSticker>
                     <span>{badge.emoji}</span>
                   </EmojiSticker>
@@ -71,14 +75,14 @@ const CommonCard: ForwardRefExoticComponent<
           </div>
         </div>
       </div>
-      <div className={styles.Content}>
-        <div className={styles.ContentMain}>
-          <div className={styles.ContentTitle}>{name}</div>
-          <div className={styles.ContentShortDescription}>{description}</div>
+      <div className={classes.Content}>
+        <div className={classes.ContentMain}>
+          <div className={classes.ContentTitle}>{name}</div>
+          <div className={classes.ContentShortDescription}>{description}</div>
         </div>
-        <div className={styles.ContentFooter}>
+        <div className={classes.ContentFooter}>
           <div
-            className={classNames([styles.ContentFooterTags, 'align-center'])}
+            className={classNames([classes.ContentFooterTags, 'align-center'])}
           >
             <PeopleIcon size={24} />
             <span>{peopleCount}</span>

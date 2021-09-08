@@ -1,7 +1,9 @@
-import styles from '@/styles/layouts/Menu.module.css'
+import classes from '@/styles/layouts/Menu.module.css'
 import { ReactElement } from 'react'
 import classNames from 'classnames'
-import UiLink from '../components/typography/UiLink'
+import UiLink from '../components/ui/typography/UiLink'
+import { MenuRoute, MenuRoutes } from '../router'
+import { useRouter } from 'next/router'
 
 interface PropTypes {
   children: ReactElement
@@ -9,26 +11,33 @@ interface PropTypes {
 
 export default function MenuLayout(props: PropTypes): ReactElement {
   const { children } = props
+  const { pathname } = useRouter()
 
   return (
-    <div className={styles.Wrapper}>
-      <nav className={styles.Menu}>
-        <h2 className={classNames(styles.MenuTitle, 'display-center')}>
+    <div className={classes.Wrapper}>
+      <nav className={classes.Menu}>
+        <h2 className={classNames(classes.MenuTitle, 'display-center')}>
           .queuer
         </h2>
-        <ul className={styles.MenuList}>
-          <UiLink href="/queues">
-            <div className={styles.MenuItem}>Все очереди</div>
-          </UiLink>
-          <UiLink href="/shops">
-            <div className={styles.MenuItem}>Магазины</div>
-          </UiLink>
-          <UiLink href="/about">
-            <div className={styles.MenuItem}>О нас</div>
-          </UiLink>
+        <ul className={classes.MenuList}>
+          {MenuRoutes.map((item: MenuRoute) => {
+            return (
+              <UiLink href={item.link} key={item.link}>
+                <div
+                  className={classNames([
+                    classes.MenuItem,
+                    pathname === item.link ? classes.MenuItemActive : '',
+                  ])}
+                >
+                  {/*<div className={classes.ShadowCorrector} />*/}
+                  {item.name}
+                </div>
+              </UiLink>
+            )
+          })}
         </ul>
       </nav>
-      <div className={styles.Slot}>{children}</div>
+      <div className={classes.Slot}>{children}</div>
     </div>
   )
 }

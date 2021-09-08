@@ -6,10 +6,9 @@
 .Menu {
   width: 300px;
   flex: 0 0 300px;
-  border-right: 1px solid #eaeaea;
   background-color: #FFFFFF;
-  overflow: hidden;
   transition: .5s;
+  box-shadow: 0 0 6px 0 #000000;
 }
 
 .MenuTitle {
@@ -34,8 +33,13 @@
   font-weight: 500;
 }
 .MenuItem:hover {
-  background: #f0f0f0;
+  background: #f8f8f8;
   font-size: 20px;
+}
+.MenuItemActive {
+  background: #f8f8f8;
+  font-size: 20px;
+  position: relative;
 }
 
 .Slot {

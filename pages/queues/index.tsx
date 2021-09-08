@@ -1,16 +1,14 @@
-import styles from '@/styles/pages/Home.module.css'
+import classes from '@/styles/pages/Home.module.css'
 import MenuLayout from 'layouts/menu'
 import { ReactElement, useEffect, useState } from 'react'
 import MainLayout from 'layouts/main'
-import CommonCard from 'components/cards/CommonCard/CommonCard'
-import UiLink from 'components/typography/UiLink'
+import CommonCard from 'components/ui/cards/CommonCard/CommonCard'
+import UiLink from 'components/ui/typography/UiLink'
 import Request from '../../request/Request'
 import { QueueCard } from '@/types/queues'
-import CardsList from '@/components/cards/CardsList/CardsList'
-import User from '@/store/User'
+import CardsList from '@/components/ui/cards/CardsList/CardsList'
 
 export default function Queues(): ReactElement {
-  // console.log(Request, 'Request')
   const [queues, setQueues] = useState<QueueCard[]>([])
 
   useEffect(() => {
@@ -22,7 +20,7 @@ export default function Queues(): ReactElement {
   console.log(queues, 'queues')
 
   return (
-    <div className={styles.Main}>
+    <div className={classes.Main}>
       <CardsList cardWidth={300}>
         {queues.map((card: QueueCard, index: number) => {
           return (
@@ -44,12 +42,9 @@ export default function Queues(): ReactElement {
 }
 
 Queues.withLayout = (page: ReactElement) => {
-  const userStore = User
   return (
     <MenuLayout>
-      <MainLayout userStore={userStore} heading="Все очереди" footer="footer">
-        {page}
-      </MainLayout>
+      <MainLayout footer="footer">{page}</MainLayout>
     </MenuLayout>
   )
 }

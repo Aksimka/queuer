@@ -1,7 +1,6 @@
 .Card {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 0.2);
   overflow: hidden;
   cursor: pointer;
   transition: .2s;
