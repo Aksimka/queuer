@@ -7,6 +7,7 @@ import UiLink from 'components/typography/UiLink'
 import Request from '../../request/Request'
 import { QueueCard } from '@/types/queues'
 import CardsList from '@/components/cards/CardsList/CardsList'
+import User from '@/store/User'
 
 export default function Queues(): ReactElement {
   // console.log(Request, 'Request')
@@ -43,9 +44,10 @@ export default function Queues(): ReactElement {
 }
 
 Queues.withLayout = (page: ReactElement) => {
+  const userStore = new User()
   return (
     <MenuLayout>
-      <MainLayout heading="Все очереди" footer="footer">
+      <MainLayout userStore={userStore} heading="Все очереди" footer="footer">
         {page}
       </MainLayout>
     </MenuLayout>

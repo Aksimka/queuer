@@ -1,13 +1,16 @@
 import styles from '@/styles/layouts/MainLayout.module.css'
-import { ReactElement } from 'react'
+import { ReactElement, FC } from 'react'
+import { observer } from 'mobx-react-lite'
+import { UserStore } from '@/store/User'
 
 interface PropTypes {
   heading?: string | ReactElement
   footer?: string | ReactElement
   children: ReactElement
+  userStore: UserStore
 }
 
-export default function MainLayout(props: PropTypes): ReactElement {
+const MainLayout: FC<PropTypes> = (props): ReactElement => {
   const { heading = '', footer = '', children } = props
 
   return (
@@ -18,3 +21,5 @@ export default function MainLayout(props: PropTypes): ReactElement {
     </div>
   )
 }
+
+export default observer(MainLayout)
