@@ -5,7 +5,7 @@ export interface UserStore {
   setAuth(val: boolean): void
 }
 
-export default class User implements UserStore {
+class User implements UserStore {
   public isAuth = false
 
   constructor() {
@@ -16,3 +16,5 @@ export default class User implements UserStore {
     this.isAuth = val
   }
 }
+
+export default new User()

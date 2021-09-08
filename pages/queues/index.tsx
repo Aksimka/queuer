@@ -44,7 +44,7 @@ export default function Queues(): ReactElement {
 }
 
 Queues.withLayout = (page: ReactElement) => {
-  const userStore = new User()
+  const userStore = User
   return (
     <MenuLayout>
       <MainLayout userStore={userStore} heading="Все очереди" footer="footer">
