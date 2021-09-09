@@ -3,6 +3,7 @@ import { ReactElement, FC, PropsWithChildren } from 'react'
 import { observer } from 'mobx-react-lite'
 import User, { UserStore } from '@/store/User'
 import Avatar from '@/components/ui/Avatar/Avatar'
+import CommonButton from '@/components/ui/buttons/CommonButton/CommonButton'
 
 type PropTypes = {
   customHeadingBlock?: ReactElement
@@ -34,7 +35,9 @@ const Component: FC<PropsWithChildren<PropTypes> & WithStore> = observer(
                 </div>
               </div>
             ) : (
-              <div>qwe</div>
+              <div className={classes.LoginBlock}>
+                <CommonButton>Log in</CommonButton>
+              </div>
             )}
           </div>
         </header>
