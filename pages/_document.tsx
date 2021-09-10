@@ -1,18 +1,30 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+  DocumentInitialProps,
+} from 'next/document'
+import { ReactElement } from 'react'
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: any) {
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
 
-  render() {
+  render(): ReactElement {
     return (
       <Html>
-        <Head />
+        <Head>
+          <title>Queuer</title>
+        </Head>
         <body>
-        <Main />
-        <NextScript />
+          <Main />
+          <NextScript />
         </body>
       </Html>
     )

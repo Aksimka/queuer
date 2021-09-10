@@ -44,7 +44,7 @@ export default function Queues(): ReactElement {
 Queues.withLayout = (page: ReactElement) => {
   return (
     <MenuLayout>
-      <MainLayout footer="footer">{page}</MainLayout>
+      <MainLayout footer=".queuer">{page}</MainLayout>
     </MenuLayout>
   )
 }

@@ -1,16 +1,23 @@
-import React, { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react'
+import React, {
+  ButtonHTMLAttributes,
+  CSSProperties,
+  FC,
+  PropsWithChildren,
+} from 'react'
 import classes from './CommonButton.module.css'
 import classNames from 'classnames'
 
-interface PropTypes extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface CommonButtonPropTypes
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: string
   textColor?: string
+  customStyles?: CSSProperties
 }
 
-const CommonButton: FC<PropsWithChildren<PropTypes>> = (props) => {
-  const { color, children, textColor, ...rest } = props
+const CommonButton: FC<PropsWithChildren<CommonButtonPropTypes>> = (props) => {
+  const { color, children, textColor, customStyles, ...rest } = props
 
-  const styles = {
+  const styles = customStyles || {
     color: textColor || '#000000',
     backgroundColor: color || '#e4e4e4',
   }

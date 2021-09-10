@@ -4,6 +4,8 @@ import { observer } from 'mobx-react-lite'
 import User, { UserStore } from '@/store/User'
 import Avatar from '@/components/ui/Avatar/Avatar'
 import CommonButton from '@/components/ui/buttons/CommonButton/CommonButton'
+import classNames from 'classnames'
+import UiButton from '@/components/ui/buttons/UiButton/UiButton'
 
 type PropTypes = {
   customHeadingBlock?: ReactElement
@@ -20,7 +22,7 @@ const Component: FC<PropsWithChildren<PropTypes> & WithStore> = observer(
 
     return (
       <div className={classes.Container}>
-        <header className={classes.Heading}>
+        <header className={classNames([classes.Heading, 'standard-shadow'])}>
           <div className={classes.CustomHeadingBlock}>
             {customHeadingBlock && customHeadingBlock}
           </div>
@@ -36,7 +38,12 @@ const Component: FC<PropsWithChildren<PropTypes> & WithStore> = observer(
               </div>
             ) : (
               <div className={classes.LoginBlock}>
-                <CommonButton>Log in</CommonButton>
+                <div className={classes.LoginBlockButton}>
+                  <CommonButton>Войти</CommonButton>
+                </div>
+                <div className={classes.LoginBlockButton}>
+                  <UiButton mode="primary">Регистрация</UiButton>
+                </div>
               </div>
             )}
           </div>
