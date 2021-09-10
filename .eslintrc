@@ -23,7 +23,9 @@
       "allowObject": true
     }],
     "@next/next/no-title-in-document-head": "off",
-    "no-var-requires": "off"
+    "@next/next/no-img-element": "off",
+    "no-var-requires": "off",
+    "no-undef": "off"
   },
   "settings": {
     "react": {

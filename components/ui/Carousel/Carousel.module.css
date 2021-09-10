@@ -1,0 +1,32 @@
+.Carousel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: stretch;
+  margin-top: 24px;
+}
+
+.ScrollBlock {
+  width: 24px;
+  flex: 0 0 24px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.ScrollableContent {
+  flex: 1 1 auto;
+  display: flex;
+  overflow: scroll;
+}
+.ScrollableContent::-webkit-scrollbar {
+  display: none;
+}
+
+.ImageWrapper {
+  margin: 0 8px;
+}
+
+.Image {
+  height: 100%;
+}
