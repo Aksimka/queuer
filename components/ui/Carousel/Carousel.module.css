@@ -12,6 +12,11 @@
   background-color: var(--color-primary);
   color: #ffffff;
   cursor: pointer;
+  user-select: none;
+}
+.ScrollBlock_disabled {
+  pointer-events: none;
+  background-color: var(--color-secondary);
 }
 
 .ScrollableContent {
@@ -25,6 +30,7 @@
 
 .ImageWrapper {
   margin: 0 8px;
+  user-select: none;
 }
 
 .Image {
