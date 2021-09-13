@@ -22,6 +22,7 @@
       "@/types/*": ["types/*"],
       "@/store/*": ["store/*"],
       "@/themes/*": ["themes/*"],
+      "@/request/*": ["request/*"],
       "@/*": ["*/** "]
     }
   },

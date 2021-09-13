@@ -6,6 +6,7 @@ import Avatar from '@/components/ui/Avatar/Avatar'
 import CommonButton from '@/components/ui/buttons/CommonButton/CommonButton'
 import classNames from 'classnames'
 import UiButton from '@/components/ui/buttons/UiButton/UiButton'
+import Request from '@/request/Request'
 
 type PropTypes = {
   customHeadingBlock?: ReactElement
@@ -20,6 +21,10 @@ const Component: FC<PropsWithChildren<PropTypes> & WithStore> = observer(
   (props): ReactElement => {
     const { footer = '', children, customHeadingBlock, userStore } = props
 
+    const logIn = () => {
+      Request.auth.logInUser({ login: 'Aksimka', password: 'qwe' })
+    }
+
     return (
       <div className={classes.Container}>
         <header className={classNames([classes.Heading, 'standard-shadow'])}>
@@ -30,7 +35,7 @@ const Component: FC<PropsWithChildren<PropTypes> & WithStore> = observer(
             {userStore.isAuth ? (
               <div className={classes.ProfileBlock}>
                 <div className={classes.ProfileBlockGreeting}>
-                  Здравствуйте, username
+                  Здравствуйте, {User.userData?.name || 'Username'}
                 </div>
                 <div className={classes.AvatarWrapper}>
                   <Avatar imagePath="/images/user.jpeg" />
@@ -39,7 +44,7 @@ const Component: FC<PropsWithChildren<PropTypes> & WithStore> = observer(
             ) : (
               <div className={classes.LoginBlock}>
                 <div className={classes.LoginBlockButton}>
-                  <CommonButton>Войти</CommonButton>
+                  <CommonButton onClick={() => logIn()}>Войти</CommonButton>
                 </div>
                 <div className={classes.LoginBlockButton}>
                   <UiButton mode="primary">Регистрация</UiButton>

@@ -4,7 +4,7 @@ import { ReactElement, useEffect, useState } from 'react'
 import MainLayout from 'layouts/main'
 import CommonCard from 'components/ui/cards/CommonCard/CommonCard'
 import UiLink from 'components/ui/typography/UiLink'
-import Request from '../../request/Request'
+import Request from '@/request/Request'
 import { QueueCard } from '@/types/queues'
 import CardsList from '@/components/ui/cards/CardsList/CardsList'
 
