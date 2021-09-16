@@ -9,9 +9,8 @@ export default function Queue(): ReactElement {
   const router = useRouter()
   console.log(router, 'router')
 
-  const onWindowResizedFunc = (e: UIEvent): void => {
-    const width = e.view?.innerWidth || window.innerWidth
-    if (width <= 768) {
+  const onWindowResizedFunc = (): void => {
+    if (window.innerWidth <= 768) {
       setOtherImgsWidth(60)
     } else {
       setOtherImgsWidth(120)
