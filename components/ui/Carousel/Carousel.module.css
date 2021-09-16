@@ -31,6 +31,8 @@
 .ImageWrapper {
   margin: 0 8px;
   user-select: none;
+  cursor: pointer;
+  display: inline-block;
 }
 
 .Image {

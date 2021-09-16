@@ -1,15 +1,36 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import MenuLayout from '@/layouts/menu'
 import classes from '@/styles/pages/QueuePage.module.css'
 import classNames from 'classnames'
-import PS5Image from '@/public/images/ps5.png'
-import Image from 'next/image'
 import Carousel from '@/components/ui/Carousel/Carousel'
 
 export default function Queue(): ReactElement {
   const router = useRouter()
   console.log(router, 'router')
+
+  const onWindowResizedFunc = (e: UIEvent): void => {
+    const width = e.view?.innerWidth || window.innerWidth
+    if (width <= 768) {
+      setOtherImgsWidth(60)
+    } else {
+      setOtherImgsWidth(120)
+    }
+  }
+
+  const [mainImage, setMainImage] = useState('')
+  const [otherImgsWidth, setOtherImgsWidth] = useState(120)
+
+  useEffect(() => {
+    setMainImage('/images/ps5.png')
+
+    window.onresize = onWindowResizedFunc
+  }, [])
+
+  const selectImage = (e: string) => {
+    setMainImage(e)
+  }
+
   return (
     <MenuLayout>
       <div className={classNames([classes.Wrapper, classes.TwoSidesLayout])}>
@@ -17,23 +38,23 @@ export default function Queue(): ReactElement {
           <div className={classes.Images}>
             <div className={classes.ImagesMain}>
               <div className={classes.BigImage}>
-                <Image
-                  src={PS5Image}
+                <img
+                  src={mainImage}
                   alt="Изображение товара"
-                  layout="responsive"
-                  objectFit="cover"
-                  className={classes.HeaderImage}
+                  className={classes.BigImage}
                 />
               </div>
             </div>
             <div className={classes.OtherImages}>
               <Carousel
+                onImageClick={(e: string) => selectImage(e)}
+                imageWidth={otherImgsWidth}
                 imagePaths={[
                   '/images/ps5.png',
                   '/images/ps5.png',
+                  '/images/imageNotFound.jpg',
                   '/images/ps5.png',
-                  '/images/ps5.png',
-                  '/images/ps5.png',
+                  '/images/long.png',
                   '/images/ps5.png',
                 ]}
               />

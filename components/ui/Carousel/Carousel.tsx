@@ -13,8 +13,10 @@ import CaretRight from '@/components/icons/CaretRight'
 
 type PropTypes = {
   imagePaths: string[]
+  imageWidth?: number
   width?: number
   height?: number
+  onImageClick?(path: string): void
 }
 
 type ScrollSidesType = 'left' | 'right'
@@ -30,15 +32,20 @@ enum ScrollSides {
 }
 
 const Carousel: FC<PropTypes> = (props): ReactElement => {
-  const { imagePaths } = props
+  const { imagePaths, imageWidth, onImageClick } = props
 
-  const contentRef: RefObject<HTMLDivElement> = useRef(null)
-  const ref = contentRef?.current
+  const [scrollPosition, setScrollPosition] = useState(0)
   const [watchedRefAttrs, setWatchedRefAttrs] = useState<WatchedRefAttrsType>({
     clientWidth: 0,
     scrollWidth: 0,
   })
-  const [scrollPosition, setScrollPosition] = useState(0)
+
+  const contentRef: RefObject<HTMLDivElement> = useRef(null)
+  const ref = contentRef?.current
+
+  const imgWidthStyles = {
+    width: `${imageWidth}px` || 'auto',
+  }
 
   const updateWatchedAttrs = (ref: HTMLDivElement | null): void => {
     if (ref) {
@@ -62,7 +69,6 @@ const Carousel: FC<PropTypes> = (props): ReactElement => {
         behavior: 'smooth',
       })
       setScrollPosition(offset >= 0 ? offset : 0)
-      updateWatchedAttrs(ref)
     }
   }
 
@@ -85,10 +91,15 @@ const Carousel: FC<PropTypes> = (props): ReactElement => {
       <div className={classes.ScrollableContent} ref={contentRef}>
         {imagePaths.map((path, index) => {
           return (
-            <div className={classes.ImageWrapper} key={index}>
+            <div
+              className={classes.ImageWrapper}
+              key={index}
+              onClick={() => onImageClick && onImageClick(path)}
+            >
               <img
                 src={path}
                 alt="Изображение товара"
+                style={imgWidthStyles}
                 className={classes.Image}
               />
             </div>

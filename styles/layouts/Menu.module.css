@@ -9,6 +9,7 @@
   background-color: #FFFFFF;
   transition: .5s;
   box-shadow: 0 0 6px 0 #000000;
+  overflow: hidden;
 }
 
 .MenuTitle {
@@ -47,14 +48,14 @@
   overflow: scroll;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 992px) {
   .Menu {
     width: 200px;
     flex-basis: 200px;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .Menu {
     width: 0;
     flex-basis: 0;

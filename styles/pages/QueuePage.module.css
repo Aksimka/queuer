@@ -56,6 +56,7 @@
 
 .BigImage {
   width: 100%;
+  height: 400px;
 }
 
 .SmallImage {
@@ -69,4 +70,31 @@
 .Description {
   border-left: 3px solid #e4e4e4;
   height: 500px;
+}
+
+@media screen and (max-width: 1400px) {
+  .BigImage {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .BigImage {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .BigImage {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .BigImage {
+    height: 200px;
+  }
+  .OtherImages {
+    height: 60px;
+  }
 }
