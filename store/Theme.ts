@@ -4,7 +4,7 @@ import { makeAutoObservable } from 'mobx'
 interface ThemeStore {
   currentTheme: ThemeNames
   rootElement: HTMLBodyElement | null
-  setTheme(el: HTMLBodyElement, name?: ThemeNames): void
+  setTheme(name?: ThemeNames): void
 }
 
 class Theme implements ThemeStore {
@@ -19,7 +19,7 @@ class Theme implements ThemeStore {
     this.rootElement = el
   }
 
-  setTheme(el: HTMLBodyElement, name: ThemeNames = ThemeNames.DEFAULT_LIGHT) {
+  setTheme(name: ThemeNames = ThemeNames.DEFAULT_LIGHT) {
     this.currentTheme = name
     if (this.rootElement) {
       setTheme(this.rootElement, name)

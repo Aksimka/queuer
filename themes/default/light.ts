@@ -1,9 +1,5 @@
-import { ThemeNames } from '../index'
-
-export type DefaultLight = 'defaultLight'
-
 export default {
-  name: ThemeNames.DEFAULT_LIGHT,
+  name: 'defaultLight',
   isDark: false,
   colors: {
     primary: '#ffc859',
