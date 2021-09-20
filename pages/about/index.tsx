@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import {ReactElement} from "react";
-import MenuLayout from "../../layouts/menu";
+import { ReactElement } from 'react'
+import MenuLayout from '../../layouts/menu'
 
 export default function About() {
   return (
@@ -12,9 +12,5 @@ export default function About() {
 }
 
 About.withLayout = (page: ReactElement) => {
-  return (
-    <MenuLayout>
-      {page}
-    </MenuLayout>
-  )
+  return <MenuLayout>{page}</MenuLayout>
 }

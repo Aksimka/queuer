@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import { NextComponentType } from 'next/dist/next-server/lib/utils'
 import Modify from '../types/modify'
 import { ReactElement, useEffect } from 'react'
+import Theme from '@/store/Theme'
 // import '@/themes/default/light.css'
 
 type ExtendedNuxtPage = {
@@ -20,7 +21,11 @@ type ExtendedAppProps = Modify<AppProps, ExtendedComponent>
 
 function MyApp({ Component, pageProps }: ExtendedAppProps): ReactElement {
   useEffect(() => {
-    import('./../themes/default/light.css')
+    // const styles = import('./themes/default/light.css')
+    const body = document.querySelector('body')
+    if (body) {
+      Theme.setRootElement(body)
+    }
   })
   const withLayout = Component.withLayout || ((page: ReactElement) => page)
 
