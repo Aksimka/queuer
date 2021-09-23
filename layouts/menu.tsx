@@ -29,8 +29,8 @@ export default function MenuLayout(props: PropTypes): ReactElement {
                     pathname === item.link ? classes.MenuItemActive : '',
                   ])}
                 >
-                  {/*<div className={classes.ShadowCorrector} />*/}
-                  {item.name}
+                  <div className={classes.MenuItemIcon}>{item.icon}</div>
+                  <div className={classes.MenuItemText}>{item.name}</div>
                 </div>
               </UiLink>
             )

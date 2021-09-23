@@ -16,7 +16,7 @@
 }
 .ScrollBlock_disabled {
   pointer-events: none;
-  background-color: var(--color-secondary);
+  background-color: var(--color-disabled);
 }
 
 .ScrollableContent {

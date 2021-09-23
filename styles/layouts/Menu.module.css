@@ -10,6 +10,7 @@
   transition: .5s;
   box-shadow: 0 0 6px 0 #000000;
   overflow: hidden;
+  font-family: "Montserrat", sans-serif;
 }
 
 .MenuTitle {
@@ -26,26 +27,28 @@
   width: 100%;
   cursor: pointer;
   transition: .1s;
-  height: 60px;
+  height: 50px;
   display: flex;
   align-items: center;
   padding-left: 32px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
 }
-.MenuItem:hover {
-  background: #f8f8f8;
-  font-size: 20px;
+.MenuItemIcon {
+
+}
+.MenuItemText {
+  margin-left: 8px;
 }
 .MenuItemActive {
   background: #f8f8f8;
-  font-size: 20px;
+  color: var(--color-primary_accent);
   position: relative;
 }
 
 .Slot {
   flex: 1;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 @media screen and (max-width: 992px) {

@@ -72,6 +72,18 @@
   height: 500px;
 }
 
+@media screen and (max-width: 1980px) {
+  .BigImage {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .BigImage {
+    height: 450px;
+  }
+}
+
 @media screen and (max-width: 1400px) {
   .BigImage {
     height: 350px;

@@ -10,6 +10,7 @@ type ColorsTypeObject = {
   success: string
   danger: string
   warning: string
+  content_background: string
 }
 
 type ThemeObject = {
