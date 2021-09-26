@@ -17,8 +17,6 @@ export default function Queues(): ReactElement {
     })
   })
 
-  console.log(queues, 'queues')
-
   return (
     <div className={classes.Main}>
       <CardsList cardWidth={300}>
