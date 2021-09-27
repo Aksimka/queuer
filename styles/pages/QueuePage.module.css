@@ -2,111 +2,33 @@
   width: 100%;
   height: 100%;
   padding-top: 50px;
+  margin-bottom: 150px;
 }
 
 .TwoSidesLayout {
   display: flex;
+  padding: 0 30px;
 }
 
 .TwoSidesLayoutLeft {
   flex: 1;
   max-width: 50%;
+  padding: 0 30px;
+}
+
+.ImagesWrapper {
+
+}
+
+.Separator {
+  padding: 60px 0 50px 0;
+}
+
+.RecentlyViewsWrapper {
+
 }
 
 .TwoSidesLayoutRight {
   flex: 1;
   max-width: 50%;
-}
-
-.Images {
-  flex-wrap: wrap;
-  margin-top: 30px;
-  padding: 0 30px;
-}
-
-.ImagesMain {
-  width: 100%;
-  display: flex;
-}
-
-.OtherImages {
-  height: 90px;
-}
-
-.ImagesOther {
-  width: 100%;
-  display: flex;
-  align-content: stretch;
-  margin-top: 24px;
-}
-
-.ScrollBlock {
-  width: 24px;
-  flex: 0 0 auto;
-  background-color: var(--color-primary);
-  color: #ffffff;
-  cursor: pointer;
-}
-
-.ImagesStack {
-  display: flex;
-  flex: 1;
-  overflow-x: scroll;
-}
-
-.BigImage {
-  width: 100%;
-  height: 400px;
-}
-
-.SmallImage {
-  margin: 0 12px;
-  width: 120px;
-  min-width: 120px;
-  height: 100%;
-  min-height: 100%;
-}
-
-.Description {
-  border-left: 3px solid #e4e4e4;
-  height: 500px;
-}
-
-@media screen and (max-width: 1980px) {
-  .BigImage {
-    height: 450px;
-  }
-}
-
-@media screen and (max-width: 1700px) {
-  .BigImage {
-    height: 450px;
-  }
-}
-
-@media screen and (max-width: 1400px) {
-  .BigImage {
-    height: 350px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .BigImage {
-    height: 300px;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .BigImage {
-    height: 250px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .BigImage {
-    height: 200px;
-  }
-  .OtherImages {
-    height: 60px;
-  }
 }

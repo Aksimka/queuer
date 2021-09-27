@@ -11,12 +11,17 @@ import classNames from 'classnames'
 import CaretLeft from '@/components/icons/CaretLeft'
 import CaretRight from '@/components/icons/CaretRight'
 
+export type CarouselImagesProp = {
+  id: number
+  path: string
+}
+
 type PropTypes = {
-  imagePaths: string[]
+  images: CarouselImagesProp[]
   imageWidth?: number
   width?: number
   height?: number
-  onImageClick?(path: string): void
+  onImageClick?(image: CarouselImagesProp): void
 }
 
 type ScrollSidesType = 'left' | 'right'
@@ -32,7 +37,7 @@ enum ScrollSides {
 }
 
 const Carousel: FC<PropTypes> = (props): ReactElement => {
-  const { imagePaths, imageWidth, onImageClick } = props
+  const { images, imageWidth, onImageClick } = props
 
   const [scrollPosition, setScrollPosition] = useState(0)
   const [watchedRefAttrs, setWatchedRefAttrs] = useState<WatchedRefAttrsType>({
@@ -89,15 +94,15 @@ const Carousel: FC<PropTypes> = (props): ReactElement => {
         <CaretLeft />
       </div>
       <div className={classes.ScrollableContent} ref={contentRef}>
-        {imagePaths.map((path, index) => {
+        {images.map((image, index) => {
           return (
             <div
               className={classes.ImageWrapper}
               key={index}
-              onClick={() => onImageClick && onImageClick(path)}
+              onClick={() => onImageClick && onImageClick(image)}
             >
               <img
-                src={path}
+                src={image.path}
                 alt="Изображение товара"
                 style={imgWidthStyles}
                 className={classes.Image}

@@ -30,3 +30,13 @@ a {
 .standard-shadow {
   box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 0.2);
 }
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.horizontal-line {
+  width: 100%;
+  height: 2px;
+}
