@@ -12,11 +12,36 @@ export default function Queue(): ReactElement {
   const router = useRouter()
   console.log(router, 'router')
 
+  const images = [
+    {
+      id: 0,
+      path: '/images/imageNotFound.jpg',
+    },
+    {
+      id: 0,
+      path: '/images/long.png',
+    },
+    {
+      id: 0,
+      path: '/images/ps5.png',
+    },
+    {
+      id: 0,
+      path: '/images/imageNotFound.jpg',
+    },
+  ]
+
   return (
-    <div className={classNames([classes.Wrapper, classes.TwoSidesLayout])}>
+    <div
+      className={classNames([
+        classes.Wrapper,
+        classes.TwoSidesLayout,
+        'container',
+      ])}
+    >
       <div className={classes.TwoSidesLayoutLeft}>
         <div className={classes.ImagesWrapper}>
-          <Images />
+          <Images images={images} />
         </div>
         <div className={classes.Separator}>
           <HorizontalLine />

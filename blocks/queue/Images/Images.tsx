@@ -4,7 +4,17 @@ import Carousel, { CarouselImagesProp } from '@/components/ui/Carousel/Carousel'
 import imagesArray from './imagesArray'
 import classNames from 'classnames'
 
-const Images: FC = (): ReactElement => {
+type ImageProp = {
+  id: number
+  path: string
+}
+
+type PropTypes = {
+  images: ImageProp[]
+}
+
+const Images: FC<PropTypes> = (props): ReactElement => {
+  const { images } = props
   const onWindowResizedFunc = (): void => {
     if (window.innerWidth <= 768) {
       setOtherImgsWidth(60)
@@ -38,11 +48,13 @@ const Images: FC = (): ReactElement => {
         </div>
       </div>
       <div className={classes.OtherImages}>
-        <Carousel
-          onImageClick={(e: CarouselImagesProp) => selectImage(e.path)}
-          imageWidth={otherImgsWidth}
-          images={imagesArray}
-        />
+        {images.map((item) => {
+          return (
+            <div className={classes.OtherImage} key={item.id}>
+              <img src={item.path} alt="Изображение товара" />
+            </div>
+          )
+        })}
       </div>
     </div>
   )
