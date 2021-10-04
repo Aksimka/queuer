@@ -41,6 +41,7 @@ const Images: FC<PropTypes> = (props): ReactElement => {
               key={item.id}
               onClick={() => selectImage(item.path)}
             >
+              <div className={classes.OtherImageLayer} />
               <img src={item.path} alt="Изображение товара" />
             </div>
           )

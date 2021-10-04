@@ -7,6 +7,7 @@
   display: flex;
   flex: 1;
   max-height: 420px;
+  cursor: zoom-in;
 }
 
 .BigImage {
@@ -16,15 +17,35 @@
 .OtherImages {
   padding: 0 12px;
   flex: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .OtherImage {
-  padding: 8px 0;
+  margin: 8px 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.OtherImage:hover > .OtherImageLayer {
+  opacity: .2;
+}
+
+.OtherImageLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  transition: .2s;
 }
 
 .OtherImage > img {
-  width: 120px;
-  height: 90px;
+  width: 70px;
+  height: 60px;
 }
 
 .ImagesOther {
@@ -71,6 +92,7 @@
   .OtherImages {
     display: flex;
     justify-content: space-around;
+    flex-direction: row;
     margin-top: 12px;
   }
   .OtherImage {
