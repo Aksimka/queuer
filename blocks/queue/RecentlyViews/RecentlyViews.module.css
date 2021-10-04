@@ -2,6 +2,32 @@
   height: 180px;
 }
 
+.RecentlyViewsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Pagination {
+  display: flex;
+}
+
+.PaginationIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-grey);
+  cursor: pointer;
+}
+.PaginationIcon:first-child {
+  margin-right: 12px;
+}
+
+.PaginationIconDisabled {
+  pointer-events: none;
+  background-color: var(--color-disabled);
+}
+
 .RecentlyViewsTitle {
   font-size: 20px;
   font-weight: 600;

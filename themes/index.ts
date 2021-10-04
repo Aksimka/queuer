@@ -6,11 +6,15 @@ export enum ThemeNames {
 
 type ColorsTypeObject = {
   primary: string
+  primary_accent: string
   secondary: string
   success: string
   danger: string
   warning: string
+  grey: string
+  disabled: string
   content_background: string
+  content_background_secondary: string
 }
 
 type ThemeObject = {

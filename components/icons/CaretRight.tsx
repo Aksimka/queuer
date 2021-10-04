@@ -1,7 +1,7 @@
 import { IconProps } from '@/types/Icon'
 import { FC, ReactElement } from 'react'
 
-const PeopleIcon: FC<IconProps> = (props): ReactElement => {
+const CaretRight: FC<IconProps> = (props): ReactElement => {
   const { size = 32, weight = 2, color = 'currentColor' } = props
 
   return (
@@ -23,4 +23,4 @@ const PeopleIcon: FC<IconProps> = (props): ReactElement => {
   )
 }
 
-export default PeopleIcon
+export default CaretRight
