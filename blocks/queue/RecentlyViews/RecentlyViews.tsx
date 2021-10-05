@@ -5,6 +5,11 @@ import classes from './RecentlyViews.module.css'
 import CaretLeft from '@/components/icons/CaretLeft'
 import classNames from 'classnames'
 import CaretRight from '@/components/icons/CaretRight'
+// import UiStaticPagination from '../../../utils/pagination/UiStaticPagination'
+
+// import imagesArray from './imagesArray'
+
+// type RecentlyItem
 
 const RecentlyViews: FC = (): ReactElement => {
   // const router = useRouter()
@@ -12,6 +17,8 @@ const RecentlyViews: FC = (): ReactElement => {
   // const goQueue = (image: CarouselImagesProp): void => {
   //   router.push(`/queues/${image.id}`)
   // }
+
+  // const pagination = new UiStaticPagination({items: imagesArray})
 
   return (
     <div className={classes.RecentlyViews}>

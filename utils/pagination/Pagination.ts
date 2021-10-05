@@ -1,50 +1,52 @@
 // Для использования этой пагинации для пагинации асинхронных данных надо сделать параметр items опциональным и использовать только счетчики
 
-export interface IPagination<T> {
-  items: T[]
+type ReturnRangeType = [number, number]
+
+export interface IPagination {
   offset: number
+  length: number
   from: number
   to: number
-  goNext(): T[]
-  goPrev(): T[]
-  getCurrentPage(): T[]
+  goNext(): ReturnRangeType
+  goPrev(): ReturnRangeType
+  getCurrentRange(): ReturnRangeType
   changeOffset(offset: number): void
-  changeItems(items: T[]): void
+  changeLength(newLength: number): void
 }
 
-export type PaginationConstructorProps<T> = {
-  items: T[]
+export type PaginationConstructorProps = {
   offset: number
+  length: number
   from?: number
 }
 
-export default class Pagination<T> implements IPagination<T> {
-  items: T[] = []
+export default class Pagination implements IPagination {
   offset = 0
+  length = 0
   from = 0
   to = 0
 
-  constructor(props: PaginationConstructorProps<T>) {
-    const { items, offset, from } = props
-    this.items = items
+  constructor(props: PaginationConstructorProps) {
+    const { offset, length, from } = props
     this.offset = offset
+    this.length = length
     this.from = from || 0
     this.to = this.from + this.offset
   }
 
-  goNext(): T[] {
+  goNext(): ReturnRangeType {
     const newToValue = this.to + this.offset
-    if (newToValue <= this.items.length) {
+    if (newToValue <= this.length) {
       this.from += this.offset
       this.to = newToValue
     } else {
       this.from -= this.offset
-      this.to = this.items.length
+      this.to = this.length
     }
-    return this.getCurrentPage()
+    return [this.from, this.to]
   }
 
-  goPrev(): T[] {
+  goPrev(): ReturnRangeType {
     const newFromValue = this.from - this.offset
     if (newFromValue >= 0) {
       this.from = newFromValue
@@ -53,18 +55,18 @@ export default class Pagination<T> implements IPagination<T> {
       this.from = 0
       this.to = this.offset
     }
-    return this.getCurrentPage()
+    return [this.from, this.to]
   }
 
-  getCurrentPage(): T[] {
-    return this.items.splice(this.from, this.offset)
-  }
-
-  changeItems(items: T[]): void {
-    this.items = items
+  getCurrentRange(): ReturnRangeType {
+    return [this.from, this.to]
   }
 
   changeOffset(offset: number): void {
     this.offset = offset
+  }
+
+  changeLength(newLength: number): void {
+    this.offset = newLength
   }
 }
