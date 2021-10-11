@@ -1,34 +1,58 @@
-.RecentlyViews {
+.root {
   height: 180px;
 }
 
-.RecentlyViewsHeader {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.Pagination {
+.pagination {
   display: flex;
 }
 
-.PaginationIcon {
+.paginationIcon {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   background-color: var(--color-grey);
   cursor: pointer;
 }
-.PaginationIcon:first-child {
+.paginationIcon:first-child {
   margin-right: 12px;
 }
 
-.PaginationIconDisabled {
+.iconDisabled {
   pointer-events: none;
   background-color: var(--color-disabled);
 }
 
-.RecentlyViewsTitle {
+.title {
   font-size: 20px;
   font-weight: 600;
+}
+
+.items {
+  display: flex;
+}
+
+.item {
+
+}
+
+.image {
+
+}
+
+.content {
+
+}
+
+.name {
+
+}
+
+.price{
+
 }

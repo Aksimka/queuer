@@ -21,19 +21,28 @@ const RecentlyViews: FC = (): ReactElement => {
   // const pagination = new UiStaticPagination({items: imagesArray})
 
   return (
-    <div className={classes.RecentlyViews}>
-      <div className={classes.RecentlyViewsHeader}>
-        <div className={classes.RecentlyViewsTitle}>Вы так-же смотрели:</div>
-        <div className={classes.Pagination}>
+    <div className={classes.root}>
+      <div className={classes.header}>
+        <div className={classes.title}>Вы так-же смотрели:</div>
+        <div className={classes.pagination}>
           <div
-            className={classNames([classes.PaginationIcon, 'display-center'])}
+            className={classNames([classes.paginationIcon, 'display-center'])}
           >
             <CaretLeft size={22} />
           </div>
           <div
-            className={classNames([classes.PaginationIcon, 'display-center'])}
+            className={classNames([classes.paginationIcon, 'display-center'])}
           >
             <CaretRight size={22} />
+          </div>
+        </div>
+      </div>
+      <div className={classes.items}>
+        <div className={classes.item}>
+          <div className={classes.image}>img</div>
+          <div className={classes.content}>
+            <div className={classes.name}>name</div>
+            <div className={classes.price}>111</div>
           </div>
         </div>
       </div>
