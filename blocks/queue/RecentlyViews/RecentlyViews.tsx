@@ -9,8 +9,20 @@ import ProductSmall from '@/components/ui/cards/ProductSmall/ProductSmall'
 // import UiStaticPagination from '../../../utils/pagination/UiStaticPagination'
 
 import imagesArray from './imagesArray'
+import usePagination from '../../../hooks/usePagination'
 
-// type RecentlyItem
+type RecentlyItem = {
+  id: number
+  path: string
+  name: string
+  price: number
+}
+
+// const pagination = new UiStaticPagination<RecentlyItem>({
+//   items: imagesArray,
+//   offset: 3,
+//   length: imagesArray.length,
+// })
 
 const RecentlyViews: FC = (): ReactElement => {
   // const router = useRouter()
@@ -19,7 +31,11 @@ const RecentlyViews: FC = (): ReactElement => {
   //   router.push(`/queues/${image.id}`)
   // }
 
-  // const pagination = new UiStaticPagination({items: imagesArray})
+  const { items, goPrevPage, goNextPage } = usePagination<RecentlyItem>({
+    payloadItems: imagesArray,
+    initPage: 1,
+    limit: 3,
+  })
 
   return (
     <div className={classes.root}>
@@ -28,18 +44,20 @@ const RecentlyViews: FC = (): ReactElement => {
         <div className={classes.pagination}>
           <div
             className={classNames([classes.paginationIcon, 'display-center'])}
+            onClick={goPrevPage}
           >
             <CaretLeft size={22} />
           </div>
           <div
             className={classNames([classes.paginationIcon, 'display-center'])}
+            onClick={goNextPage}
           >
             <CaretRight size={22} />
           </div>
         </div>
       </div>
       <div className={classes.items}>
-        {imagesArray.map((image) => {
+        {items.map((image) => {
           return (
             <div className={classes.itemWrapper} key={image.id}>
               <ProductSmall
