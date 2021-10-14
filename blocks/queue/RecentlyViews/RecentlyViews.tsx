@@ -5,9 +5,10 @@ import classes from './RecentlyViews.module.css'
 import CaretLeft from '@/components/icons/CaretLeft'
 import classNames from 'classnames'
 import CaretRight from '@/components/icons/CaretRight'
+import ProductSmall from '@/components/ui/cards/ProductSmall/ProductSmall'
 // import UiStaticPagination from '../../../utils/pagination/UiStaticPagination'
 
-// import imagesArray from './imagesArray'
+import imagesArray from './imagesArray'
 
 // type RecentlyItem
 
@@ -38,13 +39,17 @@ const RecentlyViews: FC = (): ReactElement => {
         </div>
       </div>
       <div className={classes.items}>
-        <div className={classes.item}>
-          <div className={classes.image}>img</div>
-          <div className={classes.content}>
-            <div className={classes.name}>name</div>
-            <div className={classes.price}>111</div>
-          </div>
-        </div>
+        {imagesArray.map((image) => {
+          return (
+            <div className={classes.itemWrapper} key={image.id}>
+              <ProductSmall
+                imgPath={image.path}
+                name={image.name}
+                price={image.price}
+              />
+            </div>
+          )
+        })}
       </div>
     </div>
   )

@@ -1,0 +1,25 @@
+.card {
+  width: 100px;
+}
+
+.image {
+  width: 100px;
+  height: 80px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 8px;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.price{
+  font-size: 15px;
+  font-weight: 600;
+}

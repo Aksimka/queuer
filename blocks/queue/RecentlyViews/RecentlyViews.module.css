@@ -1,5 +1,4 @@
 .root {
-  height: 180px;
 }
 
 .header {
@@ -35,24 +34,14 @@
 
 .items {
   display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
 }
 
-.item {
-
+.itemWrapper {
+  margin: 0 12px;
 }
 
-.image {
-
-}
-
-.content {
-
-}
-
-.name {
-
-}
-
-.price{
-
+.itemWrapper:first-child {
+  margin-left: 0;
 }
