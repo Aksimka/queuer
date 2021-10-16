@@ -31,11 +31,13 @@ const RecentlyViews: FC = (): ReactElement => {
   //   router.push(`/queues/${image.id}`)
   // }
 
-  const { items, goPrevPage, goNextPage } = usePagination<RecentlyItem>({
-    payloadItems: imagesArray,
-    initPage: 1,
-    limit: 3,
-  })
+  // const { items, goPrevPage, goNextPage } = usePagination<RecentlyItem>({
+  //   payloadItems: imagesArray,
+  //   initPage: 1,
+  //   limit: 3,
+  // })
+
+  const { range } = usePagination({ limit: 5, length: 10 })
 
   return (
     <div className={classes.root}>
@@ -44,30 +46,28 @@ const RecentlyViews: FC = (): ReactElement => {
         <div className={classes.pagination}>
           <div
             className={classNames([classes.paginationIcon, 'display-center'])}
-            onClick={goPrevPage}
           >
             <CaretLeft size={22} />
           </div>
           <div
             className={classNames([classes.paginationIcon, 'display-center'])}
-            onClick={goNextPage}
           >
             <CaretRight size={22} />
           </div>
         </div>
       </div>
       <div className={classes.items}>
-        {items.map((image) => {
-          return (
-            <div className={classes.itemWrapper} key={image.id}>
-              <ProductSmall
-                imgPath={image.path}
-                name={image.name}
-                price={image.price}
-              />
-            </div>
-          )
-        })}
+        {/*{items.map((image) => {*/}
+        {/*  return (*/}
+        {/*    <div className={classes.itemWrapper} key={image.id}>*/}
+        {/*      <ProductSmall*/}
+        {/*        imgPath={image.path}*/}
+        {/*        name={image.name}*/}
+        {/*        price={image.price}*/}
+        {/*      />*/}
+        {/*    </div>*/}
+        {/*  )*/}
+        {/*})}*/}
       </div>
     </div>
   )

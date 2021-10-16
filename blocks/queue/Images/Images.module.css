@@ -87,7 +87,7 @@
     display: block;
   }
   .ImagesMain {
-    max-height: 335px;
+    max-height: 405px;
   }
   .OtherImages {
     display: flex;
@@ -107,7 +107,7 @@
 
 @media screen and (max-width: 1400px) {
   .ImagesMain {
-    max-height: 260px;
+    max-height: 300px;
   }
   .OtherImage > img {
     width: 100%;
@@ -117,7 +117,7 @@
 
 @media screen and (max-width: 1200px) {
   .ImagesMain {
-    max-height: 210px;
+    max-height: 250px;
   }
   .OtherImage > img {
     width: 100%;
