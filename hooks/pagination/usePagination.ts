@@ -37,6 +37,7 @@ const usePagination = ({
         setRange(newRange)
         setPage(page)
       }
+      return newRange
     },
     [pages]
   )

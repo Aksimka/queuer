@@ -5,7 +5,8 @@ import classNames from 'classnames'
 import CaretRight from '@/components/icons/CaretRight'
 
 import imagesArray from './imagesArray'
-import usePagination from '../../../hooks/usePagination'
+import useStaticPagination from '../../../hooks/pagination/useStaticPagination'
+import ProductSmall from '@/components/ui/cards/ProductSmall/ProductSmall'
 
 type RecentlyItem = {
   id: number
@@ -15,10 +16,11 @@ type RecentlyItem = {
 }
 
 const RecentlyViews: FC = (): ReactElement => {
-  const { range, currentPage, goPage } = usePagination({
-    limit: 3,
-    length: imagesArray.length,
-  })
+  const { currentItems, currentPage, goPage } =
+    useStaticPagination<RecentlyItem>({
+      limit: 3,
+      items: imagesArray,
+    })
 
   return (
     <div className={classes.root}>
@@ -31,7 +33,6 @@ const RecentlyViews: FC = (): ReactElement => {
           >
             <CaretLeft size={22} />
           </div>
-          range: {range}, page: {currentPage}
           <div
             className={classNames([classes.paginationIcon, 'display-center'])}
             onClick={() => goPage(currentPage + 1)}
@@ -41,17 +42,17 @@ const RecentlyViews: FC = (): ReactElement => {
         </div>
       </div>
       <div className={classes.items}>
-        {/*{items.map((image) => {*/}
-        {/*  return (*/}
-        {/*    <div className={classes.itemWrapper} key={image.id}>*/}
-        {/*      <ProductSmall*/}
-        {/*        imgPath={image.path}*/}
-        {/*        name={image.name}*/}
-        {/*        price={image.price}*/}
-        {/*      />*/}
-        {/*    </div>*/}
-        {/*  )*/}
-        {/*})}*/}
+        {currentItems.map((image) => {
+          return (
+            <div className={classes.itemWrapper} key={image.id}>
+              <ProductSmall
+                imgPath={image.path}
+                name={image.name}
+                price={image.price}
+              />
+            </div>
+          )
+        })}
       </div>
     </div>
   )
