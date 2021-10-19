@@ -36,7 +36,7 @@ const usePagination = ({
   const setLength = (length: number): void => {
     _setLength(length)
   }
-  return { range: [1, 2], goNextPage, goPrevPage, setLength }
+  return <PaginationReturn>{ range, goNextPage, goPrevPage, setLength }
 }
 
 export default usePagination
