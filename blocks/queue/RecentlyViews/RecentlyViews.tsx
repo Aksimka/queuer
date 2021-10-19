@@ -1,12 +1,8 @@
 import React, { FC, ReactElement } from 'react'
-// import { CarouselImagesProp } from '@/components/ui/Carousel/Carousel'
-// import { useRouter } from 'next/router'
 import classes from './RecentlyViews.module.css'
 import CaretLeft from '@/components/icons/CaretLeft'
 import classNames from 'classnames'
 import CaretRight from '@/components/icons/CaretRight'
-import ProductSmall from '@/components/ui/cards/ProductSmall/ProductSmall'
-// import UiStaticPagination from '../../../utils/pagination/UiStaticPagination'
 
 import imagesArray from './imagesArray'
 import usePagination from '../../../hooks/usePagination'
@@ -18,26 +14,11 @@ type RecentlyItem = {
   price: number
 }
 
-// const pagination = new UiStaticPagination<RecentlyItem>({
-//   items: imagesArray,
-//   offset: 3,
-//   length: imagesArray.length,
-// })
-
 const RecentlyViews: FC = (): ReactElement => {
-  // const router = useRouter()
-
-  // const goQueue = (image: CarouselImagesProp): void => {
-  //   router.push(`/queues/${image.id}`)
-  // }
-
-  // const { items, goPrevPage, goNextPage } = usePagination<RecentlyItem>({
-  //   payloadItems: imagesArray,
-  //   initPage: 1,
-  //   limit: 3,
-  // })
-
-  const { range } = usePagination({ limit: 5, length: 10 })
+  const { range, currentPage, goPage } = usePagination({
+    limit: 3,
+    length: imagesArray.length,
+  })
 
   return (
     <div className={classes.root}>
@@ -46,11 +27,14 @@ const RecentlyViews: FC = (): ReactElement => {
         <div className={classes.pagination}>
           <div
             className={classNames([classes.paginationIcon, 'display-center'])}
+            onClick={() => goPage(currentPage - 1)}
           >
             <CaretLeft size={22} />
           </div>
+          range: {range}, page: {currentPage}
           <div
             className={classNames([classes.paginationIcon, 'display-center'])}
+            onClick={() => goPage(currentPage + 1)}
           >
             <CaretRight size={22} />
           </div>

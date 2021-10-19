@@ -18,15 +18,15 @@ export default function Queue(): ReactElement {
       path: '/images/imageNotFound.jpg',
     },
     {
-      id: 0,
+      id: 1,
       path: '/images/long.png',
     },
     {
-      id: 0,
+      id: 2,
       path: '/images/ps5.png',
     },
     {
-      id: 0,
+      id: 3,
       path: '/images/imageNotFound.jpg',
     },
   ]

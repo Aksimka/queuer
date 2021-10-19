@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState, useMemo } from 'react'
 
 type PaginationProps = {
   limit: number
@@ -8,8 +8,8 @@ type PaginationProps = {
 
 type PaginationReturn = {
   range: [number, number]
-  goPrevPage(): void
-  goNextPage(): void
+  currentPage: number
+  goPage(page: number): [number, number]
   setLength(length: number): void
 }
 
@@ -18,25 +18,33 @@ const usePagination = ({
   length,
   initPage = 0,
 }: PaginationProps): PaginationReturn => {
+  const [page, setPage] = useState(initPage)
   const [_length, _setLength] = useState(length - 1)
-  const pages = new Array(Math.ceil(_length / limit))
-    .fill(0)
-    .map((i, index) => {
+  const pages = useMemo(() => {
+    return new Array(Math.ceil(_length / limit)).fill(0).map((i, index) => {
       const from = (index + 1) * limit - limit
       const to = (index + 1) * limit - 1
       return [from, to >= _length ? _length : to]
     })
-  const [range, setRange] = useState(pages[initPage])
-  const goNextPage = () => {
-    // console.log(initPage, limit, setItems)
-  }
-  const goPrevPage = () => {
-    // console.log(initPage, limit, setItems)
-  }
-  const setLength = (length: number): void => {
+  }, [_length, limit])
+
+  const [range, setRange] = useState(pages[page])
+
+  const goPage = useCallback(
+    (page: number) => {
+      const newRange = pages[page]
+      if (newRange) {
+        setRange(newRange)
+        setPage(page)
+      }
+    },
+    [pages]
+  )
+  const setLength = useCallback((length: number): void => {
     _setLength(length)
-  }
-  return <PaginationReturn>{ range, goNextPage, goPrevPage, setLength }
+  }, [])
+
+  return <PaginationReturn>{ range, currentPage: page, goPage, setLength }
 }
 
 export default usePagination
