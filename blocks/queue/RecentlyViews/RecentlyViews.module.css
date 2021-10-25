@@ -36,12 +36,48 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 24px;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .itemWrapper {
-  margin: 0 12px;
+  width: 30%;
+  height: 15vh;
 }
 
 .itemWrapper:first-child {
   margin-left: 0;
+}
+
+@media screen and (max-width: 1980px) {
+}
+
+@media screen and (max-width: 1700px) {
+  .itemWrapper {
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .itemWrapper {
+    height: 10vh;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .itemWrapper {
+    height: 10vh;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .itemWrapper {
+    width: 30%;
+    height: 15vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .itemWrapper {
+    width: 30%;
+  }
 }
