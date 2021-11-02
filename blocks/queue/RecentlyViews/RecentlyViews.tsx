@@ -16,7 +16,7 @@ type RecentlyItem = {
 }
 
 const RecentlyViews: FC = (): ReactElement => {
-  const { currentItems, currentPage, goPage } =
+  const { currentItems, currentPage, goPage, pages } =
     useStaticPagination<RecentlyItem>({
       limit: 3,
       items: imagesArray,
@@ -28,13 +28,17 @@ const RecentlyViews: FC = (): ReactElement => {
         <div className={classes.title}>Вы так-же смотрели:</div>
         <div className={classes.pagination}>
           <div
-            className={classNames([classes.paginationIcon, 'display-center'])}
+            className={classNames([classes.paginationIcon, 'display-center'], {
+              [classes.iconDisabled]: currentPage === 0,
+            })}
             onClick={() => goPage(currentPage - 1)}
           >
             <CaretLeft size={22} />
           </div>
           <div
-            className={classNames([classes.paginationIcon, 'display-center'])}
+            className={classNames([classes.paginationIcon, 'display-center'], {
+              [classes.iconDisabled]: currentPage === pages.length - 1,
+            })}
             onClick={() => goPage(currentPage + 1)}
           >
             <CaretRight size={22} />

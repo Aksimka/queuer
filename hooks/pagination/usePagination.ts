@@ -6,9 +6,12 @@ type PaginationProps = {
   initPage?: number
 }
 
+export type PaginationRange = [number, number]
+
 type PaginationReturn = {
-  range: [number, number]
+  range: PaginationRange
   currentPage: number
+  pages: PaginationRange[]
   goPage(page: number): [number, number]
   setLength(length: number): void
 }
@@ -45,7 +48,13 @@ const usePagination = ({
     _setLength(length)
   }, [])
 
-  return <PaginationReturn>{ range, currentPage: page, goPage, setLength }
+  return <PaginationReturn>{
+    range,
+    currentPage: page,
+    goPage,
+    setLength,
+    pages,
+  }
 }
 
 export default usePagination

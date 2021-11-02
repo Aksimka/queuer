@@ -25,6 +25,7 @@
 .iconDisabled {
   pointer-events: none;
   background-color: var(--color-disabled);
+  color: var(--color-grey);
 }
 
 .title {
