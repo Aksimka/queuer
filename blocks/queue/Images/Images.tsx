@@ -2,13 +2,8 @@ import React, { FC, ReactElement, useEffect, useState } from 'react'
 import classes from './Images.module.css'
 import classNames from 'classnames'
 
-type ImageProp = {
-  id: number
-  path: string
-}
-
 type PropTypes = {
-  images: ImageProp[]
+  images: string[]
 }
 
 const Images: FC<PropTypes> = (props): ReactElement => {
@@ -17,7 +12,7 @@ const Images: FC<PropTypes> = (props): ReactElement => {
   const [mainImage, setMainImage] = useState('')
 
   useEffect(() => {
-    setMainImage(images[0].path)
+    setMainImage(images[0])
   }, [images])
 
   const selectImage = (e: string) => {
@@ -34,15 +29,15 @@ const Images: FC<PropTypes> = (props): ReactElement => {
         />
       </div>
       <div className={classes.OtherImages}>
-        {images.map((item) => {
+        {images.map((item, index) => {
           return (
             <div
               className={classes.OtherImage}
-              key={item.id}
-              onClick={() => selectImage(item.path)}
+              key={index}
+              onClick={() => selectImage(item)}
             >
               <div className={classes.OtherImageLayer} />
-              <img src={item.path} alt="Изображение товара" />
+              <img src={item} alt="Изображение товара" />
             </div>
           )
         })}

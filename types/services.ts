@@ -9,7 +9,8 @@ export interface IRequest {
 
 export interface RestApiService {
   getShortenedQueues(): Promise<QueueCard[]>
-  getFullQueue(): Promise<Queue>
+
+  getFullQueue(id: number | undefined): Promise<Queue | undefined>
 }
 
 export interface AuthService {

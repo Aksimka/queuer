@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import MenuLayout from '@/layouts/menu'
 import classes from '@/styles/pages/QueuePage.module.css'
@@ -8,29 +8,22 @@ import RecentlyViews from '../../blocks/queue/RecentlyViews/RecentlyViews'
 import HorizontalLine from '@/components/ui/HorizontalLine/HorizontalLine'
 import MainLayout from '@/layouts/main'
 import Description from '../../blocks/queue/Description/Description'
+import Request from '@/request/Request'
+import QueueType from '@/types/queue'
 
 export default function Queue(): ReactElement {
   const router = useRouter()
-  console.log(router, 'router')
 
-  const images = [
-    {
-      id: 0,
-      path: '/images/imageNotFound.jpg',
-    },
-    {
-      id: 1,
-      path: '/images/long.png',
-    },
-    {
-      id: 2,
-      path: '/images/ps5.png',
-    },
-    {
-      id: 3,
-      path: '/images/imageNotFound.jpg',
-    },
-  ]
+  const [queue, setQueue] = useState<QueueType | null>(null)
+  useEffect(() => {
+    if (!router.isReady) return
+    const queueId = router.query.id ? Number(router.query.id) : undefined
+    Request.api.getFullQueue(queueId).then((res) => {
+      res && setQueue(res)
+    })
+  }, [router.isReady, router.query.id])
+
+  if (!queue) return <div>Не найдено</div>
 
   return (
     <div
@@ -42,7 +35,7 @@ export default function Queue(): ReactElement {
     >
       <div className={classes.TwoSidesLayoutLeft}>
         <div className={classes.ImagesWrapper}>
-          <Images images={images} />
+          <Images images={queue.images} />
         </div>
         <div className={classes.Separator}>
           <HorizontalLine />

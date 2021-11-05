@@ -1,5 +1,5 @@
 import queues from './../data/queues'
-import queue from './../data/queue'
+import fullQueues from '../data/fullQueues'
 import { QueueCard } from '@/types/queues'
 import { RestApiService } from '@/types/services'
 import Queue from '@/types/queue'
@@ -9,7 +9,7 @@ export default class RestApiMock implements RestApiService {
     return queues
   }
 
-  async getFullQueue(): Promise<Queue> {
-    return queue
+  async getFullQueue(id: number | undefined): Promise<Queue | undefined> {
+    return fullQueues.find((i) => i.id === id)
   }
 }

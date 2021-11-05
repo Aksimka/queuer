@@ -3,3 +3,7 @@
   padding: 0 30px 0 15px;
   border-left: 1px solid var(--color-grey);
 }
+
+.title {
+  font-size: 36px;
+}
