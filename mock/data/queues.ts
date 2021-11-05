@@ -15,7 +15,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 1,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -30,7 +30,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 2,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -45,7 +45,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 3,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -60,7 +60,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 4,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -75,7 +75,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 5,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -90,7 +90,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 6,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -105,7 +105,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 7,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -120,7 +120,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 8,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -135,7 +135,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 9,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -150,7 +150,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 10,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -165,7 +165,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 11,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -180,7 +180,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 12,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -195,7 +195,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 13,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -210,7 +210,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 14,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -225,7 +225,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 15,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -240,7 +240,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 16,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -255,7 +255,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 17,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -270,7 +270,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 18,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:
@@ -285,7 +285,7 @@ export default [
     ],
   },
   {
-    id: 0,
+    id: 19,
     name: 'Sony PlayStation 5',
     imagePath: '/images/ps5.png',
     description:

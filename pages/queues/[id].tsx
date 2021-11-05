@@ -7,6 +7,7 @@ import Images from '../../blocks/queue/Images/Images'
 import RecentlyViews from '../../blocks/queue/RecentlyViews/RecentlyViews'
 import HorizontalLine from '@/components/ui/HorizontalLine/HorizontalLine'
 import MainLayout from '@/layouts/main'
+import Description from '../../blocks/queue/Description/Description'
 
 export default function Queue(): ReactElement {
   const router = useRouter()
@@ -51,7 +52,9 @@ export default function Queue(): ReactElement {
         </div>
       </div>
       <div className={classes.TwoSidesLayoutRight}>
-        <div className={classes.Description}>Description</div>
+        <div className={classes.Description}>
+          <Description />
+        </div>
       </div>
     </div>
   )

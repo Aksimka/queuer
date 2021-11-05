@@ -1,5 +1,6 @@
 import { QueueCard } from '@/types/queues'
 import { UserAuthRequestParams, UserAuthResponse } from '@/types/user'
+import Queue from '@/types/queue'
 
 export interface IRequest {
   api: RestApiService
@@ -8,6 +9,7 @@ export interface IRequest {
 
 export interface RestApiService {
   getShortenedQueues(): Promise<QueueCard[]>
+  getFullQueue(): Promise<Queue>
 }
 
 export interface AuthService {
