@@ -1,9 +1,10 @@
 
 .description {
   padding: 0 30px 0 15px;
-  border-left: 1px solid var(--color-grey);
+  border-left: 3px solid var(--color-grey);
 }
 
 .title {
-  font-size: 36px;
+  font-size: 46px;
+  font-weight: 500;
 }

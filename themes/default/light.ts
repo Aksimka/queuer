@@ -8,7 +8,7 @@ export default {
     success: '#43aa4f',
     danger: '#ff5656',
     warning: '#feac3b',
-    grey: '#cdcdcd',
+    grey: '#eaeaea',
     disabled: '#e4e4e4',
     content_background: '#ffffff',
     content_background_secondary: '#e4e4e4',
