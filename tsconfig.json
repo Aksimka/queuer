@@ -23,7 +23,7 @@
       "@/store/*": ["store/*"],
       "@/themes/*": ["themes/*"],
       "@/request/*": ["request/*"],
-      "@/*": ["*/** "]
+      "@/hooks/*": ["hooks/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

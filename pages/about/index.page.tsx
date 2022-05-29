@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ReactElement } from 'react'
-import MenuLayout from '../../layouts/menu'
+import MenuLayout from '@/layouts/Menu/menu'
 
 export default function About() {
   return (

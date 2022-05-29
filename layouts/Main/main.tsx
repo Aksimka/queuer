@@ -1,12 +1,12 @@
-import classes from '@/styles/layouts/MainLayout.module.css'
+import User, { UserStore } from '@/store/User'
 import { ReactElement, FC, PropsWithChildren } from 'react'
 import { observer } from 'mobx-react-lite'
-import User, { UserStore } from '@/store/User'
+import classes from '@/layouts/Main/MainLayout.module.css'
 import Avatar from '@/components/ui/Avatar/Avatar'
 import CommonButton from '@/components/ui/buttons/CommonButton/CommonButton'
 import classNames from 'classnames'
 import UiButton from '@/components/ui/buttons/UiButton/UiButton'
-import Request from '@/request/Request'
+import useAuth from '@/hooks/useAuth'
 
 type PropTypes = {
   customHeadingBlock?: ReactElement
@@ -21,9 +21,7 @@ const Component: FC<PropsWithChildren<PropTypes> & WithStore> = observer(
   (props): ReactElement => {
     const { footer = '', children, customHeadingBlock, userStore } = props
 
-    const logIn = () => {
-      Request.auth.logInUser({ login: 'Aksimka', password: 'qwe' })
-    }
+    const { logIn } = useAuth()
 
     return (
       <div className={classes.Container}>

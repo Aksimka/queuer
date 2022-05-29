@@ -1,23 +1,15 @@
-import usePagination, { PaginationRange } from './usePagination'
 import { useMemo, useState } from 'react'
+import usePagination from './usePagination'
 
 type StaticPaginationProps<T> = {
   limit: number
   items: T[]
 }
 
-interface StaticPaginationReturn<T> {
-  currentItems: T[]
-  currentPage: number
-  pages: PaginationRange[]
-  goPage(page: number): [number, number]
-  setItems(items: T[]): void
-}
-
 const useStaticPagination = <T>({
   limit = 3,
   items = [],
-}: StaticPaginationProps<T>): StaticPaginationReturn<T> => {
+}: StaticPaginationProps<T>) => {
   const [_items, _setItems] = useState(items)
   const { goPage, range, currentPage, pages } = usePagination({
     length: items.length,

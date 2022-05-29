@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
-import MenuLayout from '@/layouts/menu'
-import MainLayout from '@/layouts/main'
+import MenuLayout from '@/layouts/Menu/menu'
+import MainLayout from '@/layouts/Main/main'
 
 export default function Shops(): ReactElement {
   return <div>shops page</div>
@@ -9,7 +9,7 @@ export default function Shops(): ReactElement {
 Shops.withLayout = (page: ReactElement) => {
   return (
     <MenuLayout>
-      <MainLayout heading="Все магазины" footer="footer">
+      <MainLayout customHeadingBlock={<div>Все магазины</div>} footer="footer">
         {page}
       </MainLayout>
     </MenuLayout>

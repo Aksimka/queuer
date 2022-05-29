@@ -6,7 +6,6 @@ import Modify from '../types/modify'
 import { ReactElement, useEffect } from 'react'
 import Theme from '@/store/Theme'
 import { ThemeNames } from '@/themes/index'
-// import '@/themes/default/light.css'
 
 type ExtendedNuxtPage = {
   withLayout(comp: ReactElement): ReactElement

@@ -1,9 +1,9 @@
-import classes from '@/styles/layouts/Menu.module.css'
 import { ReactElement } from 'react'
-import classNames from 'classnames'
-import UiLink from '../components/ui/typography/UiLink'
-import { MenuRoute, MenuRoutes } from '../router'
+import { MenuRoute, MenuRoutes } from '../../router'
 import { useRouter } from 'next/router'
+import classes from '@/layouts/Menu/Menu.module.css'
+import classNames from 'classnames'
+import UiLink from '@/components/ui/typography/UiLink'
 
 interface PropTypes {
   children: ReactElement

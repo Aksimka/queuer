@@ -1,6 +1,6 @@
 import { AuthService, IRequest, RestApiService } from '@/types/services'
-import RestApiMock from '../mock/services/rest-api'
-import AuthServiceMock from '../mock/services/auth'
+import RestApiMock from './rest-api'
+import AuthServiceMock from './auth'
 
 class Request implements IRequest {
   api: RestApiService

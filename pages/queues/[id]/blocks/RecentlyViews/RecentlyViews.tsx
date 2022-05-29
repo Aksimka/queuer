@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import CaretRight from '@/components/icons/CaretRight'
 
 import imagesArray from './imagesArray'
-import useStaticPagination from '../../../hooks/pagination/useStaticPagination'
+import useStaticPagination from '@/hooks/pagination/useStaticPagination'
 import ProductSmall from '@/components/ui/cards/ProductSmall/ProductSmall'
 
 type RecentlyItem = {

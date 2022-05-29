@@ -1,6 +1,6 @@
 import { QueueCard } from '@/types/queues'
 import { UserAuthRequestParams, UserAuthResponse } from '@/types/user'
-import Queue from '@/types/queue'
+import { Queue } from '@/types/queues'
 
 export interface IRequest {
   api: RestApiService

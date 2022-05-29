@@ -6,21 +6,7 @@ type PaginationProps = {
   initPage?: number
 }
 
-export type PaginationRange = [number, number]
-
-type PaginationReturn = {
-  range: PaginationRange
-  currentPage: number
-  pages: PaginationRange[]
-  goPage(page: number): [number, number]
-  setLength(length: number): void
-}
-
-const usePagination = ({
-  limit,
-  length,
-  initPage = 0,
-}: PaginationProps): PaginationReturn => {
+const usePagination = ({ limit, length, initPage = 0 }: PaginationProps) => {
   const [page, setPage] = useState(initPage)
   const [_length, _setLength] = useState(length - 1)
   const pages = useMemo(() => {
@@ -48,7 +34,7 @@ const usePagination = ({
     _setLength(length)
   }, [])
 
-  return <PaginationReturn>{
+  return {
     range,
     currentPage: page,
     goPage,

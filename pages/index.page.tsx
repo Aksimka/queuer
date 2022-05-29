@@ -2,7 +2,7 @@
 
 import { ReactElement, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import MenuLayout from '@/layouts/menu'
+import MenuLayout from '@/layouts/Menu/menu'
 
 export default function Index(): ReactElement {
   const router = useRouter()
